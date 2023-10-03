@@ -9,8 +9,11 @@ class PlaceLocation {
   final double longitude;
   final String address;
 
-  const PlaceLocation(
-      {required this.latitude, required this.longitude, required this.address});
+  const PlaceLocation({
+    required this.latitude,
+    required this.longitude,
+    required this.address,
+  });
 }
 
 class Place {
@@ -19,6 +22,10 @@ class Place {
   final File image;
   final PlaceLocation location;
 
-  Place({required this.location, required this.image, required this.title})
-      : id = uuid.v4();
+  Place({
+    required this.location,
+    required this.image,
+    required this.title,
+    String? id,
+  }) : id = id ?? uuid.v4();
 }
